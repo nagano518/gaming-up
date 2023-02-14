@@ -1,24 +1,50 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# テーブル設計
 
-Things you may want to cover:
+## users テーブル
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| nickname           | string | null: false |
+| email              | string | null: false |
+| encrypted_password | string | null: false |
+| content            | text   | null: false |
 
-* Ruby version
+## アソシエーション
+has_many :movies
+has_many :comments
 
-* System dependencies
 
-* Configuration
+## movies テーブル
+| Column             | Type       | Options                        |
+| ------             | --------   | -----------                    |
+| movie_name         | string     | null: false                    |
+| movie_content      | text       | null: false                    |
+| movie              |            | null: false                    |
+| user               | references | null: false, foreign_key: true |
+| genre_id           | integer    | null: false                    |
 
-* Database creation
+## アソシエーション
+belong_to :user
+has_many  :comments
+## ActiveHashを利用する
+extend ActiveHash::Associations::ActiveRecordExtensions
+belongs_to :genre
 
-* Database initialization
 
-* How to run the test suite
+## comments テーブル
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| content | test       | null: false                    |
+| user    | references | null: false, foreign_key: true |
+| room    | references | null: false, foreign_key: true |
 
-* Services (job queues, cache servers, search engines, etc.)
+## アソシエーション
+belong_to :user
+belong_to :movie
 
-* Deployment instructions
 
-* ...
+## genreのモデルに下記を記載
+## ActiveHashを利用
+include ActiveHash::Associations
+has_many :movies
