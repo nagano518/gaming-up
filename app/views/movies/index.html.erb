@@ -1,22 +1,22 @@
 <main class="main">
-  <div class='item-contents'>
+  <div class='movie-contents'>
     <h2 class='title'>ピックアップ</h2>
     <div class="subtitle" >
       新規投稿動画
     </div>
 
-    <ul class='item-lists'>
+    <ul class='movie-lists'>
     <% @movies.each do |movie| %>
       <li class='list'>
         <%= link_to root_path do %>
-        <div class='item-img-content'>
-          <%= video_tag(movie.video_top.to_s, :controls => true, class: "item-img") %>
+        <div class='movie-img-content'>
+          <%= video_tag(movie.video_top.to_s, :controls => true, class: "movie-img") %>
         </div>
-        <div class='item-info'>
-          <h3 class='item-name'>
+        <div class='movie-info'>
+          <h3 class='movie-name'>
             <%= movie.movie_name %>
           </h3>
-          <div class='item-price'>
+          <div class='movie-content'>
             <span><%= movie.movie_content %><br><%= movie.genre.name %></span>
           </div>
         </div>

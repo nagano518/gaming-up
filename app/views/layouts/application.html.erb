@@ -18,9 +18,9 @@
           </div>
           <% if user_signed_in? %>
             <div class="nav__right">
-              <%= 'こんにちは' %>
+              <span class = nav__right__text>こんにちは</span>
               <%= link_to current_user.nickname, root_path, class: :greeting__link %>
-              <%= 'さん' %>
+              <span class = nav__right__text>さん</span>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
               <%= link_to "動画投稿", new_movie_path, class: :nav__btn %>
             </div>
