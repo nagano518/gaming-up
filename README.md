@@ -20,7 +20,7 @@ has_many :comments
 | ------             | --------   | -----------                    |
 | movie_name         | string     | null: false                    |
 | movie_content      | text       | null: false                    |
-| movie              |            | null: false                    |
+| video_top          | string     | null: false                    |
 | user               | references | null: false, foreign_key: true |
 | genre_id           | integer    | null: false                    |
 
