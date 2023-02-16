@@ -1,9 +1,8 @@
 <main class="main">
-  <div class="inner">
-    <div class="card__wrapper">
-    <h2 class='title'>ピックアップカテゴリー</h2>
+  <div class='item-contents'>
+    <h2 class='title'>ピックアップ</h2>
     <div class="subtitle" >
-      新規投稿商品
+      新規投稿動画
     </div>
 
     <ul class='item-lists'>
@@ -15,16 +14,15 @@
         </div>
         <div class='item-info'>
           <h3 class='item-name'>
-            <%= 'hoge' %>
+            <%= movie.movie_name %>
           </h3>
           <div class='item-price'>
-            <span><%= 'hoge' %>円<br><%= 'hoge' %></span>
+            <span><%= movie.movie_content %><br><%= movie.genre.name %></span>
           </div>
         </div>
         <% end %>
       <% end %>
       </li>
     </ul>
-    </div>
   </div>
 </main>
