@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2023_02_14_135918) do
     t.string "movie_name", null: false
     t.text "movie_content", null: false
     t.integer "genre_id", null: false
-    t.integer "video_top", null: false
+    t.string "video_top", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

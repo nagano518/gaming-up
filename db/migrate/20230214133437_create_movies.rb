@@ -5,7 +5,7 @@ class CreateMovies < ActiveRecord::Migration[6.0]
       t.string :movie_name,      null: false
       t.text :movie_content,     null: false
       t.integer :genre_id,       null: false
-      t.integer :video_top,      null: false
+      t.string :video_top,      null: false
       t.references :user,        null: false, foreign_key: true
 
       t.timestamps

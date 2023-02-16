@@ -7,4 +7,5 @@ class User < ApplicationRecord
   validates :nickname, presence: true
   validates :content, presence: true
 
+  has_many :movies
 end
