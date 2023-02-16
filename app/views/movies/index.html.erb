@@ -1,13 +1,30 @@
 <main class="main">
   <div class="inner">
-    <%# ログインしているときは以下を表示する %>
-      <%# <div class="greeting"> %>
-        <%# こんにちは、 %>
-        <%# <%= link_to "ユーザー名さん", root_path, class: :greeting__link%>
-      <%# </div> %>
-    <%# // ログインしているときは上記を表示する %>
     <div class="card__wrapper">
-      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
+    <h2 class='title'>ピックアップカテゴリー</h2>
+    <div class="subtitle" >
+      新規投稿商品
+    </div>
+
+    <ul class='item-lists'>
+    <% @movies.each do |movie| %>
+      <li class='list'>
+        <%= link_to root_path do %>
+        <div class='item-img-content'>
+          <%= video_tag(movie.video_top.to_s, :controls => true) %>
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= 'hoge' %>
+          </h3>
+          <div class='item-price'>
+            <span><%= 'hoge' %>円<br><%= 'hoge' %></span>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+      </li>
+    </ul>
     </div>
   </div>
 </main>
