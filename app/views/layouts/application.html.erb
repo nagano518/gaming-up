@@ -22,7 +22,7 @@
               <%= link_to current_user.nickname, root_path, class: :greeting__link %>
               <%= 'さん' %>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
-              <%= link_to "動画投稿", root_path, class: :nav__btn %>
+              <%= link_to "動画投稿", new_movie_path, class: :nav__btn %>
             </div>
           <% else %>
             <div class="nav__right">
