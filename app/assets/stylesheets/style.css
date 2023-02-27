@@ -164,7 +164,7 @@ a {
 }
 
 .movie-lists>.list {
-  width: 40vh;
+  width: 50vh;
   padding: 1vw;
   background-color: #FFF;
 }
@@ -175,9 +175,7 @@ a {
 }
 
 .movie-img {
-  width: 35vh;
-  height: 30vh;
-  padding: 1vw;
+  width: 100%;
 }
 
 .movie-info {
