@@ -60,3 +60,7 @@ gem 'carrierwave'
 gem "net-http"
 
 gem 'active_hash'
+
+group :production do
+  gem 'pg'
+end
