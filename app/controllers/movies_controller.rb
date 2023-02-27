@@ -21,6 +21,10 @@ class MoviesController < ApplicationController
     movie.destroy
   end
 
+  def show
+    @movie = Movie.find(params[:id])
+  end
+
   private
 
     def movies_params

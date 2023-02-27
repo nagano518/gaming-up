@@ -1,0 +1,23 @@
+<div class="movie-show">
+  <div class="movie-box">
+    <h2 class="name">
+      <%= @movie.movie_name %>
+    </h2>
+    <div class='movie-img-content'>
+      <%= video_tag(@movie.video_top.to_s, :controls => true, class: "movie-box-img") %>
+    </div>
+    <div class='movie-info-box'>
+      <h3 class='movie-content'>
+        <%= @movie.movie_content %>
+      </h3>
+      <div class='genre-name'>
+        <%= @movie.genre.name %>
+      </div>
+    </div>
+
+    <% if user_signed_in? %>
+      <%= link_to "動画の編集", root_path, class: "red-btn" %>
+      <%= link_to "削除", root_path, class:"movie-destroy" %>
+    <% end %>
+  </div>
+</div>

@@ -8,7 +8,7 @@
     <ul class='movie-lists'>
     <% @movies.each do |movie| %>
       <li class='list'>
-        <%= link_to root_path do %>
+        <%= link_to movie_path(movie.id) do %>
         <div class='movie-img-content'>
           <%= video_tag(movie.video_top.to_s, :controls => true, class: "movie-img") %>
         </div>
@@ -24,5 +24,6 @@
       </li>
     <% end %>
     </ul>
+
   </div>
 </main>
