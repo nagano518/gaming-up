@@ -8,4 +8,6 @@ class User < ApplicationRecord
   validates :content, presence: true
 
   has_many :movies
+  has_many :comments
+
 end
