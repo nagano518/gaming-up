@@ -20,4 +20,25 @@
       <%= link_to "削除", movie_path(@movie.id), method: :delete, class:"movie-destroy" %>
     <% end %>
   </div>
+  <div class="prototype__comments">
+    <% if user_signed_in? %>
+      <%= form_with model: [@movie, @comment], local: true do |f|%>
+        <div class="field">
+          <%= f.label :comment_content, "コメント" %><br />
+          <%= f.text_area :comment_content, id:"comment_content" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "送信する", class: :form__btn  %>
+        </div>
+      <% end %>
+    <% end %>
+    <ul class="comments_lists">
+      <% @comments.each do |comment| %>
+        <li class="comments_list">
+          <%= comment.comment_content%>
+          <%= comment.user.nickname %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
