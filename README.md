@@ -33,11 +33,11 @@ belongs_to :genre
 
 
 ## comments テーブル
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| content | test       | null: false                    |
-| user    | references | null: false, foreign_key: true |
-| room    | references | null: false, foreign_key: true |
+| Column               | Type       | Options                        |
+| ---------------      | ---------- | ------------------------------ |
+| comment_content      | text       | null: false                    |
+| user                 | references | null: false, foreign_key: true |
+| movie                | references | null: false, foreign_key: true |
 
 ## アソシエーション
 belong_to :user
